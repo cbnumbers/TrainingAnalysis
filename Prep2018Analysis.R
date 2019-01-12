@@ -17,11 +17,6 @@ FullData <- gs_read(PrepStats2018, ws = "FullData")
 FullData <- FullData %>%
   mutate(Day = as.Date(FullData$Day, "%m/%d/%Y"))
 
-ts <- FullData %>%
-  xts(order.by = FullData$Day)
-
-lm <- 
-
 ggplot(FullData, aes(x = Day, y = Weight)) +
   geom_point(aes(col = Phase )) +
   geom_smooth(aes(color = Phase)) +
